@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\Models\Televisor;
 
 class TelevisoresSeeder extends Seeder
 {
@@ -12,6 +13,10 @@ class TelevisoresSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        // Datos de ejemplo para los televisores
+        Televisor::factory()->count(100)->create();
+
     }
+    
 }
+
