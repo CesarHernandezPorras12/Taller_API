@@ -23,8 +23,8 @@ class CreateTelevisorRequest extends FormRequest
     {
         return [
             'marca' => 'required|string|max:255',
-            'tamaño' => 'required|string|max:50', // Cambiado a 'string' si el tamaño no es un número
-            'peso' => 'required|numeric|min:0|max:9999.99', // Ajustado para que sea numérico y con rango
+            'tamaño' => 'required|string|max:50', 
+            'peso' => 'required|numeric|min:0|max:9999.99', 
             'color' => 'required|string|max:50',
             'tipo_pantalla' => 'required|string|max:50',
             'bluetooth' => 'required|boolean',

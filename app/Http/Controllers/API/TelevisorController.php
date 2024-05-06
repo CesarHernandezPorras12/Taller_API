@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
 use App\Models\Televisor;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class TelevisorController extends Controller
 {
@@ -13,7 +13,8 @@ class TelevisorController extends Controller
      */
     public function index()
     {
-        //
+        $televisores = Televisor::all();
+        return response()->json($televisores, 200);
     }
 
     /**
@@ -21,7 +22,7 @@ class TelevisorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return response()->json(Televisor::create($request->all()), 201);
     }
 
     /**
@@ -29,7 +30,7 @@ class TelevisorController extends Controller
      */
     public function show(Televisor $televisor)
     {
-        //
+        return response()->json($televisor, 200);
     }
 
     /**
@@ -37,7 +38,7 @@ class TelevisorController extends Controller
      */
     public function update(Request $request, Televisor $televisor)
     {
-        //
+        return response()->json($televisor->update($request->all()), 200);
     }
 
     /**
@@ -45,6 +46,6 @@ class TelevisorController extends Controller
      */
     public function destroy(Televisor $televisor)
     {
-        //
+        return response()->json($televisor->delete(), 204);
     }
 }
